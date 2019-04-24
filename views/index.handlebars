@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <h1 id="burger-h1">Eat Da Burger</h1>
+    <img src="../assets/imgs/burger_cookbook_cover.jpg" class="rounded"  id= "burger-image">
+
+
+  <div class="row" >
+    <div class="col-lg-6" id="need-devoured">
+      <h2>Burgers that need devoured</h2>
+      <ul>
+        {{#each burgers}}
+          {{#unless devoured}}
+            {{> burgers/burger-block devoured=true}}
+          {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="col-lg-6" id="need-devoured">
+      <h2>Burgers that are devoured</h2>
+      <ul>
+        {{#each burgers}}
+          {{#if devoured}}
+            {{> burgers/burger-block devoured=false}}
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  
+  <div class="row" id="add-burger">
+    <h2>Add a Burger</h2>
+    <form class="create-form">
+
+      <div class="form-group">
+        <label for="ca">Burger Name:</label>
+        <input type="text" id="ca" name="burger_name">
+      </div>
+
+      <div class="form-group">
+        <label for="devoured">Devoured?</label><br>
+        <input type="radio" name="devoured" value="1" checked>Devoured!<br>
+        <input type="radio" name="devoured", value="0">Not Devoured
+      </div>
+
+      <button type="submit">Add Burger</button>
+    </form>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
